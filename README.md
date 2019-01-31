@@ -2,7 +2,7 @@
 
 Wait for services or resources to become available. This package is based on similar functionality from [Dockerize](https://github.com/jwilder/dockerize), adapted to be used as a library rather than a command-line tool.
 
-The package exports a single method, `Await`, which waits for a set of resource URLs to all become available. You may provide a timeout after which the method will give up and report an error.
+The package exports a single method, `Await`, which waits for a set of resource URLs to all become available. You may provide a timeout after which the method will give up and report an error. You may also cancel waiting by passing a cancelable context and invoking its `cancel()` function.
 
 ```go
 func Await(cxt context.Context, urls []string, timeout time.Duration) error
